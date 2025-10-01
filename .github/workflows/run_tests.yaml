@@ -8,7 +8,7 @@ on:
 
 jobs:
   Kafka-Pipeline:
-    uses: KryukovaPolina/qubership-test-pipelines/blob/main/.github/workflows/kafka.yaml@main
+    uses: KryukovaPolina/qubership-test-pipelines/.github/workflows/kafka.yaml@main
     with:
       service_branch: '${{ github.head_ref || github.ref_name }}'
       versions_file: '.github/versions.yaml'
