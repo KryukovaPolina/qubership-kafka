@@ -371,6 +371,7 @@ class KafkaLibrary(object):
             | Delete Topic By Pattern | admin | kafka-topic-* |
         """
         topics = self.get_topics_list(admin, topic_name_pattern)
+        BuiltIn().log_to_console(topics)
         if not topics:
             logger.debug('Topics have already been deleted.')
             return
