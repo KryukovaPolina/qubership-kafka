@@ -37,6 +37,7 @@ Cleanup
 *** Test Cases ***
 Test Topic Creation
     [Tags]  kafka_crud  kafka
+    Log to console  test123
     Wait Until Keyword Succeeds  ${OPERATION_RETRY_COUNT}  ${OPERATION_RETRY_INTERVAL}
     ...  Check Absence of Topic
     Create Topic  ${admin}  ${TOPIC_NAME}  ${1}  ${1}
