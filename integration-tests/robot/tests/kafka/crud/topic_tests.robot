@@ -59,3 +59,4 @@ Test Topic Deletion
     Delete Topic  ${admin}  ${TOPIC_NAME}
     Wait Until Keyword Succeeds  ${OPERATION_RETRY_COUNT}  ${OPERATION_RETRY_INTERVAL}
     ...  Check Absence of Topic
+
