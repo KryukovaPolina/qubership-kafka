@@ -5,7 +5,7 @@ charts:
     chart_file: operator/charts/helm/kafka-service/Chart.yaml
     values_file: operator/charts/helm/kafka-service/values.yaml
     image:
-      - ghcr.io/netcracker/qubership-kafka-integration-tests:${release}
+      - ghcr.io/kryukovapolina/qubership-kafka-integration-tests:main
       - ghcr.io/netcracker/qubership-kafka-crd-init:${release}
       - ghcr.io/netcracker/qubership-kafka-service-operator:${release}
       - ghcr.io/netcracker/qubership-kafka-monitoring:${release}
