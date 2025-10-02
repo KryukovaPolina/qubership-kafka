@@ -234,6 +234,7 @@ class KafkaLibrary(object):
             | Get Topics List | admin | kafka-topic-* |
         """
         topics = admin.list_topics()
+        BuiltIn().log_to_console(f"List topics: {topics}")
         result = []
         for topic_name in topics:
             if topic_name_pattern is not None:
@@ -377,6 +378,9 @@ class KafkaLibrary(object):
         if not topics:
             logger.debug('Topics have already been deleted.')
             return
+        topics = self.get_topics_list(admin, topic_name_pattern)
+        time = datetime.datetime.now()
+        BuiltIn().log_to_console(f"Found topics to delete 2: {topics} {time}")
         time = datetime.datetime.now()
         BuiltIn().log_to_console(f"Calling __delete_topics func: {time}")
         self.__delete_topics(admin, topics)
