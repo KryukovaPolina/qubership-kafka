@@ -499,7 +499,7 @@ mirrorMakerMonitoring:
 # integration tests are not performed by default
 integrationTests:
   install: false
-  image: "ghcr.io/netcracker/qubership-kafka-integration-tests:main"
+  image: "ghcr.io/kryukovapolina/qubership-kafka-integration-tests:main"
   service:
     name: kafka-integration-tests-runner
   waitForResult: true
