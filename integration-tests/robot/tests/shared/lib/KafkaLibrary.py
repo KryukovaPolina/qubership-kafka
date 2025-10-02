@@ -15,6 +15,7 @@
 import os
 import re
 import time
+import datetime
 
 import requests
 from kafka import KafkaConsumer, KafkaProducer
@@ -371,10 +372,13 @@ class KafkaLibrary(object):
             | Delete Topic By Pattern | admin | kafka-topic-* |
         """
         topics = self.get_topics_list(admin, topic_name_pattern)
-        BuiltIn().log_to_console(topics)
+        time = datetime.datetime.now()
+        BuiltIn().log_to_console(f"Found topics to delete: {topics} {time}")
         if not topics:
             logger.debug('Topics have already been deleted.')
             return
+        time = datetime.datetime.now()
+        BuiltIn().log_to_console(f"Calling __delete_topics func: {time}")
         self.__delete_topics(admin, topics)
 
     def __delete_topics(self, admin, topics):
