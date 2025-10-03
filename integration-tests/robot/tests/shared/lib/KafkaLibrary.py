@@ -391,7 +391,8 @@ class KafkaLibrary(object):
             admin.delete_topics(topics)
             logger.debug(f'Topic "{topics}" is deleted.')
         except UnknownTopicOrPartitionError:
-            logger.debug(f'Topic "{topics}" has already been deleted.')
+            BuiltIn().log_to_console(f'Topic "{topics}" has already been deleted or does not exist.')
+            logger.debug(f'Topic "{topics}" has already been deleted or does not exist.')
         except Exception as e:
             self.builtin.fail(f'Failed to delete topic "{topics}": {e}')
 
